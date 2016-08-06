@@ -145,5 +145,19 @@
       </action>
     </pluginExecution>
 
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <goals>
+          <goal>check</goal>
+        </goals>
+        <versionRange>[0.0,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+
   </pluginExecutions>
 </lifecycleMappingMetadata>

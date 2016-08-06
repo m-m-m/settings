@@ -13,12 +13,18 @@
   <property name="charset" value="UTF-8"/>
   <module name="TreeWalker">
     <module name="FileContentsHolder"/>
-    <module name="JavadocMethod"/>
+    <module name="JavadocMethod">
+      <property name="scope" value="protected"/>
+    </module>
     <module name="JavadocType">
+      <property name="scope" value="protected"/>
       <property name="authorFormat" value="[a-zA-Z].+"/>
     </module>
-    <module name="JavadocVariable"/>
+    <module name="JavadocVariable">
+      <property name="scope" value="protected"/>
+    </module>
     <module name="JavadocStyle">
+      <property name="scope" value="protected"/>
       <property name="checkHtml" value="false"/>
       <property name="tokens" value="INTERFACE_DEF,CLASS_DEF,METHOD_DEF,CTOR_DEF"/>
     </module>
