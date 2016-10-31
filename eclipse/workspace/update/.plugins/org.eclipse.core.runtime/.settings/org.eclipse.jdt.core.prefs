@@ -1,4 +1,4 @@
-#Sat Aug 06 11:02:57 CEST 2016
+#Mon Oct 31 15:36:49 CET 2016
 eclipse.preferences.version=1
 org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=*.launch,*.ucls,*.useq
 org.eclipse.jdt.core.codeComplete.argumentPrefixes=
@@ -52,7 +52,7 @@ org.eclipse.jdt.core.compiler.problem.specialParameterHidingField=disabled
 org.eclipse.jdt.core.compiler.problem.staticAccessReceiver=error
 org.eclipse.jdt.core.compiler.problem.unavoidableGenericTypeProblems=disabled
 org.eclipse.jdt.core.compiler.problem.uncheckedTypeOperation=warning
-org.eclipse.jdt.core.compiler.problem.undocumentedEmptyBlock=warning
+org.eclipse.jdt.core.compiler.problem.undocumentedEmptyBlock=info
 org.eclipse.jdt.core.compiler.problem.unnecessaryTypeCheck=warning
 org.eclipse.jdt.core.compiler.problem.unqualifiedFieldAccess=warning
 org.eclipse.jdt.core.compiler.problem.unusedImport=warning

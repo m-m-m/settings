@@ -13,7 +13,9 @@
   <property name="charset" value="UTF-8"/>
   <module name="TreeWalker">
     <module name="FileContentsHolder"/>
+    <module name="SuppressWarningsHolder"/>
     <module name="JavadocMethod">
+      <property name="id" value="javadoc"/>
       <property name="scope" value="protected"/>
     </module>
     <module name="JavadocType">
@@ -32,7 +34,9 @@
     <module name="LocalFinalVariableName"/>
     <module name="LocalVariableName"/>
     <module name="MemberName"/>
-    <module name="MethodName"/>
+    <module name="MethodName">
+      <property name="format" value="^[a-zA-Z0-9]+$"/>
+    </module>
     <module name="PackageName"/>
     <module name="ParameterName"/>
     <module name="StaticVariableName"/>
@@ -62,7 +66,9 @@
     <module name="TypecastParenPad"/>
     <module name="WhitespaceAfter"/>
     <module name="ModifierOrder"/>
-    <module name="RedundantModifier"/>
+    <module name="RedundantModifier">
+      <property name="tokens" value="METHOD_DEF,VARIABLE_DEF,ANNOTATION_FIELD_DEF"/>
+    </module>
     <module name="AvoidNestedBlocks"/>
     <module name="LeftCurly"/>
     <module name="NeedBraces"/>
@@ -95,7 +101,7 @@
     <module name="ConstantName"/>
     <module name="ParameterName"/>
     <module name="WhitespaceAround">
-      <property name="tokens" value="ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,EQUAL,GE,GT,LAND,LCURLY,LE,LITERAL_ASSERT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,LITERAL_ASSERT,TYPE_EXTENSION_AND"/>
+      <property name="tokens" value="ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,EQUAL,GE,GT,LAND,LE,LITERAL_ASSERT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,TYPE_EXTENSION_AND"/>
       <property name="allowEmptyConstructors" value="true"/>
       <property name="allowEmptyMethods" value="true"/>
     </module>
@@ -113,17 +119,17 @@
     </module>
     <module name="RegexpSinglelineJava">
       <metadata name="net.sf.eclipsecs.core.comment" value="System.out/err"/>
-      <property name="format" value="System\.(out|err)"/>
+      <property name="format" value="^[ ]*System\.(out|err)"/>
       <property name="message" value="Use logger"/>
     </module>
     <module name="RegexpSinglelineJava">
       <metadata name="net.sf.eclipsecs.core.comment" value="System.exit"/>
-      <property name="format" value="System\.exit"/>
+      <property name="format" value="^[ ]*System\.exit"/>
       <property name="message" value="Only exit from main methods"/>
     </module>
     <module name="RegexpSinglelineJava">
       <metadata name="net.sf.eclipsecs.core.comment" value="printStackTrace()"/>
-      <property name="format" value="printStackTrace\(\)"/>
+      <property name="format" value="^[ ]*printStackTrace\(\)"/>
       <property name="message" value="Use logger"/>
     </module>
     <module name="RegexpSinglelineJava">
@@ -148,7 +154,7 @@
     </module>
     <module name="RegexpSinglelineJava">
       <metadata name="net.sf.eclipsecs.core.comment" value="System.gc()"/>
-      <property name="format" value="System.gc\(\)"/>
+      <property name="format" value="^[ ]*System.gc\(\)"/>
       <property name="message" value="Never invoke gc() explicitly!"/>
     </module>
     <module name="TodoComment">
@@ -170,8 +176,11 @@
     <property name="fileExtensions" value="java"/>
   </module>
   <module name="Translation"/>
-  <module name="JavadocPackage"/>
+  <module name="JavadocPackage">
+    <property name="severity" value="info"/>
+  </module>
   <module name="SuppressionCommentFilter">
     <property name="offCommentFormat" value="CHECKSTYLE\:OFF \([a-zA-Z].*\)"/>
   </module>
+  <module name="SuppressWarningsFilter"/>
 </module>
