@@ -22,6 +22,8 @@
         <artifactId>maven-dependency-plugin</artifactId>
         <goals>
           <goal>list</goal>
+          <goal>sources</goal>
+          <goal>resolve</goal>
         </goals>
         <versionRange>[0.0,)</versionRange>
       </pluginExecutionFilter>
