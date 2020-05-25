@@ -5,38 +5,25 @@
     This configuration file was written by the eclipse-cs plugin configuration editor
 -->
 <!--
-    Checkstyle-Configuration: mmm
+    Checkstyle-Configuration: devon
     Description: none
 -->
 <module name="Checker">
   <property name="severity" value="warning"/>
   <property name="charset" value="UTF-8"/>
+  <!-- moved module LineLength, see https://checkstyle.org/releasenotes.html#Release_8.24 -->
+  <module name="LineLength">
+      <property name="severity" value="info"/>
+      <property name="ignorePattern" value="^.*@see.*$"/>
+      <property name="max" value="128"/>
+  </module>
   <module name="TreeWalker">
-    <module name="FileContentsHolder"/>
-    <module name="SuppressWarningsHolder"/>
-    <module name="JavadocMethod">
-      <property name="id" value="javadoc"/>
-      <property name="scope" value="protected"/>
-    </module>
-    <module name="JavadocType">
-      <property name="scope" value="protected"/>
-      <property name="authorFormat" value="[a-zA-Z].+"/>
-    </module>
-    <module name="JavadocVariable">
-      <property name="scope" value="protected"/>
-    </module>
-    <module name="JavadocStyle">
-      <property name="scope" value="protected"/>
-      <property name="checkHtml" value="false"/>
-      <property name="tokens" value="INTERFACE_DEF,CLASS_DEF,METHOD_DEF,CTOR_DEF"/>
-    </module>
+    <!-- deleted <module name="FileContentsHolder"/>, see https://checkstyle.org/releasenotes.html#Release_8.2 -->
     <module name="ConstantName"/>
     <module name="LocalFinalVariableName"/>
     <module name="LocalVariableName"/>
     <module name="MemberName"/>
-    <module name="MethodName">
-      <property name="format" value="^[a-zA-Z0-9]+$"/>
-    </module>
+    <module name="MethodName"/>
     <module name="PackageName"/>
     <module name="ParameterName"/>
     <module name="StaticVariableName"/>
@@ -45,142 +32,113 @@
     <module name="IllegalImport"/>
     <module name="RedundantImport"/>
     <module name="UnusedImports"/>
-    <module name="LineLength">
-      <property name="severity" value="info"/>
-      <property name="ignorePattern" value="^.*@see.*$"/>
-      <property name="max" value="160"/>
-    </module>
+    
     <module name="MethodLength">
-      <property name="severity" value="info"/>
+      <property name="max" value="250"/>
+      <property name="countEmpty" value="false"/>
     </module>
-    <module name="ParameterNumber">
-      <property name="severity" value="warning"/>
-    </module>
+    <module name="ParameterNumber"/>
     <module name="EmptyForIteratorPad"/>
+    <module name="MethodParamPad"/>
     <module name="NoWhitespaceAfter">
-      <property name="tokens" value="BNOT,DEC,INC,LNOT,UNARY_MINUS,UNARY_PLUS"/>
+      <property name="tokens" value="BNOT,DEC,DOT,INC,LNOT,UNARY_MINUS,UNARY_PLUS"/>
     </module>
     <module name="NoWhitespaceBefore"/>
     <module name="OperatorWrap"/>
     <module name="ParenPad"/>
     <module name="TypecastParenPad"/>
     <module name="WhitespaceAfter"/>
+    <module name="WhitespaceAround">
+      <property name="tokens" value="ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,EQUAL,GE,GT,LAND,LCURLY,LE,LITERAL_ASSERT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,QUESTION,RCURLY,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,LITERAL_ASSERT,TYPE_EXTENSION_AND"/>
+    </module>
     <module name="ModifierOrder"/>
     <module name="RedundantModifier">
       <property name="tokens" value="METHOD_DEF,VARIABLE_DEF,ANNOTATION_FIELD_DEF"/>
     </module>
-    <module name="AvoidNestedBlocks"/>
+    <module name="EmptyBlock">
+      <property name="option" value="text"/>
+    </module>
     <module name="LeftCurly"/>
     <module name="NeedBraces"/>
     <module name="RightCurly"/>
-    <module name="AvoidInlineConditionals">
-      <property name="severity" value="info"/>
-    </module>
+    <module name="AvoidNestedBlocks"/>
+    <module name="CovariantEquals"/>
     <module name="EmptyStatement"/>
-    <module name="EqualsHashCode">
-      <property name="severity" value="info"/>
-    </module>
+    <module name="EqualsHashCode"/>
     <module name="HiddenField">
       <property name="ignoreConstructorParameter" value="true"/>
       <property name="ignoreSetter" value="true"/>
     </module>
     <module name="IllegalInstantiation"/>
     <module name="InnerAssignment"/>
-    <module name="MagicNumber">
-      <property name="severity" value="info"/>
-      <property name="ignoreNumbers" value="-1, 0, 1, 2, 3, 4, 5, 6, 8, 10, 16, 23, 24, 31, 59, 60, 64, 100, 128, 256, 512, 1000, 1024"/>
-    </module>
     <module name="MissingSwitchDefault"/>
     <module name="SimplifyBooleanExpression"/>
     <module name="SimplifyBooleanReturn"/>
-    <module name="FinalClass"/>
-    <module name="HideUtilityClassConstructor"/>
+    <module name="StringLiteralEquality"/>
+    <module name="NestedIfDepth">
+      <property name="max" value="5"/>
+    </module>
+    <module name="NestedTryDepth">
+      <property name="max" value="5"/>
+    </module>
+    <module name="ParameterAssignment">
+      <property name="severity" value="warning"/>
+    </module>
     <module name="VisibilityModifier"/>
-    <module name="ArrayTypeStyle"/>
-    <module name="UpperEll"/>
-    <module name="ConstantName"/>
-    <module name="ParameterName"/>
-    <module name="WhitespaceAround">
-      <property name="tokens" value="ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,EQUAL,GE,GT,LAND,LE,LITERAL_ASSERT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,TYPE_EXTENSION_AND"/>
-      <property name="allowEmptyConstructors" value="true"/>
-      <property name="allowEmptyMethods" value="true"/>
-    </module>
-    <module name="ExplicitInitialization"/>
-    <module name="PackageDeclaration"/>
-    <module name="ParameterAssignment"/>
-    <module name="RequireThis">
-      <property name="severity" value="info"/>
-      <property name="checkMethods" value="false"/>
-    </module>
     <module name="SuperClone"/>
     <module name="SuperFinalize"/>
-    <module name="EmptyBlock">
-      <property name="option" value="text"/>
+    <module name="PackageDeclaration"/>
+    <module name="DeclarationOrder"/>
+    <module name="DefaultComesLast"/>
+    <module name="MultipleVariableDeclarations"/>
+    <module name="MagicNumber">
+      <property name="ignoreNumbers" value="-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 32, 64, 100, 128, 255, 256, 1000"/>
     </module>
-    <module name="RegexpSinglelineJava">
-      <metadata name="net.sf.eclipsecs.core.comment" value="System.out/err"/>
-      <property name="format" value="^[ ]*System\.(out|err)"/>
-      <property name="message" value="Use logger"/>
+    <module name="FinalClass"/>
+    <module name="HideUtilityClassConstructor"/>
+    <module name="JavadocMethod">
+      <property name="scope" value="protected"/>
     </module>
-    <module name="RegexpSinglelineJava">
-      <metadata name="net.sf.eclipsecs.core.comment" value="System.exit"/>
-      <property name="format" value="^[ ]*System\.exit"/>
-      <property name="message" value="Only exit from main methods"/>
+    <module name="JavadocType"/>
+    <module name="JavadocVariable">
+      <property name="scope" value="protected"/>
     </module>
-    <module name="RegexpSinglelineJava">
-      <metadata name="net.sf.eclipsecs.core.comment" value="printStackTrace()"/>
-      <property name="format" value="^[ ]*printStackTrace\(\)"/>
-      <property name="message" value="Use logger"/>
+    <module name="JavadocStyle">
+      <property name="checkHtml" value="false"/>
     </module>
-    <module name="RegexpSinglelineJava">
-      <metadata name="net.sf.eclipsecs.core.comment" value="Abstract class not abstract"/>
-      <property name="format" value="public class Abstract"/>
-      <property name="message" value="Abstract class not abstract"/>
-    </module>
-    <module name="ClassTypeParameterName">
-      <property name="format" value="^[A-Z_]+$"/>
-    </module>
-    <module name="MethodTypeParameterName">
-      <property name="format" value="^[A-Z_]*$"/>
-    </module>
-    <module name="AvoidStaticImport"/>
-    <module name="JavaNCSS">
-      <property name="methodMaximum" value="200"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <metadata name="net.sf.eclipsecs.core.comment" value="Supply version"/>
-      <property name="format" value="@since X"/>
-      <property name="message" value="Supply actual version"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <metadata name="net.sf.eclipsecs.core.comment" value="System.gc()"/>
-      <property name="format" value="^[ ]*System.gc\(\)"/>
-      <property name="message" value="Never invoke gc() explicitly!"/>
-    </module>
+    <module name="UpperEll"/>
+    <module name="ArrayTypeStyle"/>
     <module name="TodoComment">
+      <property name="severity" value="ignore"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+    </module>
+    <module name="BooleanExpressionComplexity">
       <property name="severity" value="info"/>
-      <property name="format" value="(TODO|FIXME|REVIEW|CHECKSTYLE:OFF|NOSONAR|NOPMD)"/>
     </module>
-    <module name="AbstractClassName">
-      <property name="severity" value="warning"/>
-      <property name="format" value="^Abstract.*$"/>
-      <property name="ignoreName" value="true"/>
+    <module name="CyclomaticComplexity">
+      <property name="severity" value="info"/>
+    </module>
+    <module name="RegexpSinglelineJava">
+      <property name="format" value="System.(out|err).print"/>
+      <property name="message" value="Use logger"/>
+    </module>
+    <module name="RegexpSinglelineJava">
+      <property name="format" value="System.exit"/>
+      <property name="message" value="Only exit from main methods (inside main() use SuppressionCommentFilter)"/>
+    </module>
+    <!-- moved SuppressionCommentFilter here, see https://checkstyle.org/releasenotes.html#Release_8.1 -->
+    <module name="SuppressionCommentFilter">
+      <property name="offCommentFormat" value="CHECKSTYLE\:OFF \([a-zA-Z].*\)"/>
     </module>
   </module>
-  <module name="FileLength">
-    <property name="severity" value="info"/>
-  </module>
+  <module name="FileLength"/>
   <module name="FileTabCharacter"/>
-  <module name="RegexpHeader">
-    <property name="header" value="/\* Copyright \(c\) The m-m-m Team, Licensed under the Apache License, Version 2\.0\n \* http://www\.apache\.org/licenses/LICENSE-2\.0 \*/"/>
-    <property name="fileExtensions" value="java"/>
-  </module>
-  <module name="Translation"/>
   <module name="JavadocPackage">
     <property name="severity" value="info"/>
   </module>
-  <module name="SuppressionCommentFilter">
-    <property name="offCommentFormat" value="CHECKSTYLE\:OFF \([a-zA-Z].*\)"/>
+  <module name="NewlineAtEndOfFile">
+    <property name="severity" value="info"/>
+    <property name="lineSeparator" value="lf"/>
   </module>
-  <module name="SuppressWarningsFilter"/>
+  <module name="Translation"/>
 </module>
