@@ -161,5 +161,19 @@
       </action>
     </pluginExecution>
 
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.teavm</groupId>
+        <artifactId>teavm-maven-plugin</artifactId>
+        <goals>
+          <goal>compile</goal>
+        </goals>
+        <versionRange>[0.0,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+
   </pluginExecutions>
 </lifecycleMappingMetadata>
