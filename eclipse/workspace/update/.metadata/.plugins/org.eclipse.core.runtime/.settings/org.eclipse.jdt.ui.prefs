@@ -156,7 +156,6 @@ spelling_ignore_upper=true
 spelling_ignore_urls=true
 spelling_locale_initialized=true
 spelling_user_dictionary=$[IDE_HOME]/settings/eclipse/project.dictionary
-spelling_user_dictionary=${SETTINGS_PATH}/eclipse/project.dictionary
 spelling_user_dictionary_encoding=UTF-8
 tabWidthPropagated=true
 useAnnotationsPrefPage=true
